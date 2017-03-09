@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.my.dao.sqlserver.ITestDao">
+    <!-- 查询全部用户 -->
+    <select id="getTestList" parameterType="java.lang.Integer" resultType="com.my.pojo.TestModel">
+       SELECT TOP ${_parameter}
+        [Id] ,
+        [Name] ,
+        [Remark] ,
+        [CreateTime]
+        FROM   [Test].[dbo].[Test](NOLOCK)
+    </select>
+</mapper>
